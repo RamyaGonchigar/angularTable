@@ -1,0 +1,18 @@
+  <table class="table">
+    <thead>
+      <tr class="align-items-start">
+        <th *ngFor="let th of _tableHeads; trackBy: _trackItems;">
+          <span>{{th.display}}</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody infiniteScroll
+    [infiniteScrollDistance]="3"
+    [infiniteScrollThrottle]="5"
+    (scrolled)="onScroll()"
+    [scrollWindow]="false">
+      <tr class="padding align-center" *ngFor="let rowData of data; let i = index ; trackBy: _trackItems;">
+        <ng-template [ngTemplateOutlet]="userDataTpl" [ngTemplateOutletContext]="{ $implicit: context, item: rowData , innerIndex:i }"></ng-template>
+      </tr>
+    </tbody>
+  </table>
