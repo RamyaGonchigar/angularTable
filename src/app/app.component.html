@@ -1,4 +1,3 @@
-<div>
   <app-table-component [columns]="testColumnData" [data]="testTableData" (whenSorted)="onSort($event)">
     <ng-template let-item="item">
       <td>{{item.id}}</td>
@@ -6,4 +5,3 @@
       <td>{{item.role}}</td>
     </ng-template>
   </app-table-component>
-</div>

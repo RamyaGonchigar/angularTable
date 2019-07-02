@@ -32,14 +32,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.http.getTableData().subscribe((data) => {
       this.testTableData = data;
-      console.log("this.testTableData",this.testTableData)
-    });
+    },
+    err => console.error(err));
   }
 
-  onScroll(){
-    this.http.getTableData().subscribe((data) => {
-      this.testTableData = data;
-      console.log("this.testTableData",this.testTableData)
-    });
-  }
 }
